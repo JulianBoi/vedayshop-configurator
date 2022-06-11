@@ -217,7 +217,7 @@ function Step4() {
     render_list1.setAttribute('class','boxList');
     render_list1.setAttribute('id','tab2');
 
-
+    // Tableau 1
 
 
     if(array_data_resume.size == 0){
@@ -235,6 +235,10 @@ function Step4() {
     }else{
         const table0 = document.createElement('table');
     }
+
+
+    // Tableau 2
+
     if(array_data_order.size == 0){
         const pText = document.createElement('p');
         pText.setAttribute('class','atMoment');
