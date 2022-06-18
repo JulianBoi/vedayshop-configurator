@@ -216,55 +216,9 @@ function Step4() {
     const render_list1 = document.createElement('div');
     render_list1.setAttribute('class','boxList');
     render_list1.setAttribute('id','tab2');
-
-    // Tableau 1
-
-
-    if(array_data_resume.size == 0){
-        const pText = document.createElement('p');
-        pText.setAttribute('class','atMoment');
-        pText.innerText = upTextFirst(translate('notOrder'));
-        render_list0.append(pText);
-        const backspace = document.createElement('br');
-        render_list0.append(backspace);
-        const buttonAdd = document.createElement('button');
-        render_list0.setAttribute('onclick','');
-        buttonAdd.innerText = upTextFirst(translate('add'));
-        buttonAdd.setAttribute('class','btnAddAtMoment');
-        render_list0.append(buttonAdd);
-    }else{
-        const table0 = document.createElement('table');
-    }
-
-
-    // Tableau 2
-
-    if(array_data_order.size == 0){
-        const pText = document.createElement('p');
-        pText.setAttribute('class','atMoment');
-        pText.innerText = upTextFirst(translate('notOrder'));
-        render_list1.append(pText);
-        const backspace = document.createElement('br');
-        render_list1.append(backspace);
-        const buttonAdd = document.createElement('button');
-        render_list1.setAttribute('onclick','');
-        buttonAdd.innerText = upTextFirst(translate('add'));
-        buttonAdd.setAttribute('class','btnAddAtMoment');
-        render_list1.append(buttonAdd);
-    }else{
-        const table1 = document.createElement('table');
-    }
-
-
+    RenderTab(render_list0,render_list1);
     renderStep.append(render_list0);
     renderStep.append(render_list1);
-
-
-
-
-
-
-
 
 
 }
