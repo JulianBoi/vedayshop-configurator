@@ -12,6 +12,7 @@ array_translate_EN.set('previous','previous');
 array_translate_EN.set('add','add');
 array_translate_EN.set('copy','copy');
 array_translate_EN.set('delete','delete');
+array_translate_EN.set('modif','edit');
 /*Text Form Wizard*/
 array_translate_EN.set('stepsService','service');
 array_translate_EN.set('stepsSleeve','sleeve');
@@ -25,4 +26,8 @@ array_translate_EN.set('titlePrice','price');
 /*Tab Header*/
 array_translate_EN.set('unitGroup','no Group');
 array_translate_EN.set('multipleGroup','unit Group');
-array_translate_EN.set('notOrder','No order at the moment.');
+array_translate_EN.set('notOrder','no order at the moment.');
+array_translate_EN.set('description','description');
+array_translate_EN.set('priceUnit','unit Price');
+array_translate_EN.set('modifAndSupp','action');
+

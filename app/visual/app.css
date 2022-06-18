@@ -81,7 +81,7 @@ a{
 
 td,th{
     padding:5px;
-    width:150px;
+    width:300px;
 }
 table{
 
@@ -98,7 +98,7 @@ td {
 .boxList{
     clear:both;
     float: left;
-    width: 1200px;
+    width: 1500px;
     padding: 10px;
     border: 1px solid;
     position: relative;
@@ -114,5 +114,11 @@ td {
     text-align: center;
 }
 .btnAddAtMoment{
+    float: right;
+}
+.modifButton{
+    float: left;
+}
+.deleteButton{
     float: right;
 }

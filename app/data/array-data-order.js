@@ -1,7 +1,7 @@
 //        Array Data Order
 //
 //     array_data_resume =>
-//          DESCRIPTION : Nom de l'objet de la commande
+//              DESCRIPTION : Nom de l'objet de la commande
 //              QUANTITE : Nombre d'objet de cette description
 //              PRICE : Prix au total
 //

@@ -12,10 +12,11 @@ array_translate_FR.set('previous','précédent');
 array_translate_FR.set('add','ajouter');
 array_translate_FR.set('copy','Copier');
 array_translate_FR.set('delete','Supprimer');
+array_translate_FR.set('modif','Modifier');
 /*Texte Assistant Formulaire*/
 array_translate_FR.set('stepsService','service');
 array_translate_FR.set('stepsSleeve','passe-câble');
-array_translate_FR.set('stepsUpgrades','mise     à jour');
+array_translate_FR.set('stepsUpgrades','mise à jour');
 array_translate_FR.set('stepsCables','des cables');
 array_translate_FR.set('stepsColors','couleurs');
 array_translate_FR.set('stepsAdditional','suppléments');
@@ -27,3 +28,8 @@ array_translate_FR.set('titlePrice','prix');
 array_translate_FR.set('unitGroup','Non groupé');
 array_translate_FR.set('multipleGroup','Groupé par unité');
 array_translate_FR.set('notOrder','Pas de commande pour le moment.');
+array_translate_FR.set('description','Description');
+array_translate_FR.set('priceUnit','Prix à l\'unité');
+array_translate_FR.set('modifAndSupp','action');
+
+
