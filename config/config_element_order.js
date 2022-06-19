@@ -22,7 +22,7 @@ let config_order_element = new Map();
         cable8pinEPS.set('DESCRIPTION','CABLE_8_PIN_EPS');
     // ADD 8 PIN PCI E
     let cable8pinPCIE = new Map();
-    config_order_element.set('CABLE_8_PIN_PCIE',cable8pinPCIE);
+    config_order_element.set('CABLE_8_PIN_PCI_E',cable8pinPCIE);
         // CONFIG 8 PIN PCI E
         cable8pinPCIE.set('PRICE',1190);
         cable8pinPCIE.set('NAME','Câble 8 PIN PCI E');

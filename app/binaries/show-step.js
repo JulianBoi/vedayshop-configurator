@@ -4,9 +4,9 @@ function AddStep() {
     render.setAttribute('id','render');
     document.body.prepend(render);
 }
-
 function DeleteStep() {
     Reset();
+
 }
 function changeTab(number){
     if(number == 0){
@@ -19,6 +19,8 @@ function changeTab(number){
          const hiddentab2 =  document.getElementById('tab2');
          hiddentab1.style.display = 'block';
          hiddentab2.style.display = 'none';
+         const selectContainer = document.getElementById('containerSelect');
+         selectContainer.style.display = 'block';
 
     }
     if(number == 1){
@@ -33,5 +35,7 @@ function changeTab(number){
          const hiddentab2 =  document.getElementById('tab2');
          hiddentab1.style.display = 'none';
          hiddentab2.style.display = 'block';
+        const selectContainer = document.getElementById('containerSelect');
+        selectContainer.style.display = 'none';
     }
 }

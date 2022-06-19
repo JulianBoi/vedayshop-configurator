@@ -13,6 +13,7 @@ array_translate_EN.set('add','add');
 array_translate_EN.set('copy','copy');
 array_translate_EN.set('delete','delete');
 array_translate_EN.set('modif','edit');
+array_translate_EN.set('quantity','quantity');
 /*Text Form Wizard*/
 array_translate_EN.set('stepsService','service');
 array_translate_EN.set('stepsSleeve','sleeve');
