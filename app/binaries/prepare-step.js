@@ -219,7 +219,28 @@ function Step4() {
     RenderTab(render_list0,render_list1);
     renderStep.append(render_list0);
     renderStep.append(render_list1);
-
+    const containerSelect = document.createElement('div');
+    containerSelect.setAttribute('id','containerSelect');
+    const select = document.createElement('select');
+    select.setAttribute('class','select');
+    select.setAttribute('id','select');
+    select.setAttribute('onchange','changeValue(document.getElementById("select").value)');
+    let count_order_element = 0;
+    config_order_element.forEach((value, key) => {
+        const option = document.createElement('option');
+        option.innerText = value.get('NAME') + ' - ' + new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format((value.get('PRICE')/100));
+        option.value = key;
+        select.append(option);
+        count_order_element ++;
+    });
+    const add_button  = document.createElement('button');
+    add_button.innerText = upTextFirst(translate('add'));
+    add_button.setAttribute('class','add_button');
+    add_button.setAttribute('onclick','addLine()');
+    containerSelect.append(select);
+    containerSelect.append(add_button);
+    renderStep.append(containerSelect);
+    changeValue(select.value);
 
 }
 function Step5() {

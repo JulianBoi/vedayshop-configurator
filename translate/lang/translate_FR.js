@@ -13,6 +13,7 @@ array_translate_FR.set('add','ajouter');
 array_translate_FR.set('copy','Copier');
 array_translate_FR.set('delete','Supprimer');
 array_translate_FR.set('modif','Modifier');
+array_translate_FR.set('quantity','quantité');
 /*Texte Assistant Formulaire*/
 array_translate_FR.set('stepsService','service');
 array_translate_FR.set('stepsSleeve','passe-câble');

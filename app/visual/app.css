@@ -113,6 +113,10 @@ td {
 .atMoment{
     text-align: center;
 }
+.tableScroll {
+    overflow-y: scroll;
+    max-height: 450px;
+}
 .btnAddAtMoment{
     float: right;
 }
@@ -121,4 +125,18 @@ td {
 }
 .deleteButton{
     float: right;
+}
+
+.select {
+    margin-bottom: 15px;
+    width: 600px;
+    height:35px;
+    text-align: center;
+}
+.add_button{
+    margin-bottom: 15px;
+    width: 200px;
+    height:35px;
+    text-align: center;
+    cursor:pointer;
 }
