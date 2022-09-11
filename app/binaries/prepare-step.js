@@ -243,8 +243,8 @@ function Step4() {
     changeValue(select.value);
 
 }
-function Step5() {
-// RENDER
+function Step5(keyModule = ''){
+
     const renderStep = document.getElementById('render');
     // TEXTE ENTETE
     const textLine1 = document.createElement('p');
@@ -273,13 +273,44 @@ function Step5() {
     renderStep.append(textLine4);
     renderStep.append(textLine5);
 
+    const moduleApp = document.createElement('div');
+    moduleApp.setAttribute('id','moduleApp');
+
+    SwitchMenu(moduleApp,false,keyModule);
 
 
+    array_data_resume.forEach((value, key) => {
+
+        const module = document.createElement('div');
+        module.setAttribute('id','modules');
+        module.setAttribute('class','modules');
+        module.style.width = '1300px';
+        module.style.height = '700px';
+        module.style.float='left';
+        module.style.border = '2px solid gray';
+        if(key == 0){
+            module.style.display = 'block';
+        }else {
+            module.style.display = 'none';
+        }
+
+
+
+        ShowModule(module,true,keyModule);
+
+
+        moduleApp.append(module);
+    });
+
+
+
+    renderStep.append(moduleApp);
 
 }
 function Step6() {
 
 }
+
 
 
 

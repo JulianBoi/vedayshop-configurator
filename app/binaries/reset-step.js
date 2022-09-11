@@ -3,7 +3,7 @@ function Reset() {
         document.getElementById('render').remove();
         const render = document.createElement('div');
         render.setAttribute('id','render');
-        document.body.prepend(render);
+        document.getElementById('module-main').append(render);
     }else{
         const render = document.createElement('render');
     }

@@ -103,6 +103,7 @@ function RenderTab(render_list0,render_list1) {
         pText.setAttribute('class','atMoment');
         pText.innerText = upTextFirst(translate('notOrder'));
         render_list1.append(pText);
+        render_list1.append(pText);
     }else{
         render_list1.innerHTML = "";
 
@@ -243,6 +244,11 @@ function addLine(){
     newArray.set('DESCRIPTION',config.get('NAME'));
     newArray.set('PRICE',config.get('PRICE'));
     newArray.set('KEY',config.get('DESCRIPTION'));
+    config_order_element.forEach((value, key) => {
+        if(config.get('DESCRIPTION') == key){
+            newArray.set('NBR_CABLES',config_order_element.get(key).get('NBR_CABLES'));
+        }
+    });
     array_data_resume.set('-1',newArray);
     array_data_resume = mapChange(array_data_resume);
     RenderTab(render_list0,render_list1);
@@ -282,4 +288,152 @@ function deleteLine(number) {
     const render_list0  = document.getElementById("tab1");
     const render_list1  = document.getElementById("tab2");
     RenderTab(render_list0,render_list1);
+}
+// TODO: Affichage du bon modules
+function ShowModule(module,first,keyModule = '') {
+
+    module.innerHTML = '';
+    const controlButtonColor = document.createElement('div');
+    let count = 0;
+    config_color_order.forEach((value, key) => {
+        const buttonColor = document.createElement('button');
+        buttonColor.setAttribute('id',key);
+        buttonColor.style.width = '120px';
+        buttonColor.style.height = '35px';
+        buttonColor.style.textAlign = 'center';
+        buttonColor.style.cursor = 'pointer';
+        buttonColor.innerText = value;
+        buttonColor.setAttribute('onclick',"ShowModule(document.getElementById('modules'),false,'"+key+"')");
+        if(first == true){
+            if(count == 0){
+                buttonColor.setAttribute('class', 'active_button');
+            }
+        }else{
+
+            if(keyModule == key ){
+                buttonColor.setAttribute('class', 'active_button');
+                array_data_control.set('color_selected',keyModule);
+            }
+        }
+
+        controlButtonColor.append(buttonColor);
+        count++;
+    });
+
+
+    module.append(controlButtonColor);
+    if(first == false){
+        keyModule = 0;
+    }
+
+    let color_module_selected = array_result_color_for_order.get(array_data_control.get('module_selected'));
+    for (let i = 0; i < color_module_selected.length; i++) {
+        const generateImg = document.createElement('img');
+        generateImg.src = 'media/STEP_5/CABLE/'+array_data_resume.get(array_data_control.get('module_selected')).get('KEY')+'/color/'+color_module_selected[i]+'/Cable_'+i+'.png';
+        generateImg.style.width = '300px';
+        generateImg.style.height = '350px';
+        generateImg.style.position = 'absolute';
+        module.append(generateImg);
+    }
+    const generateImg1 = document.createElement('img');
+    generateImg1.src = 'media/STEP_5/CABLE/'+array_data_resume.get(array_data_control.get('module_selected')).get('KEY')+'/other/Comb.png';
+    generateImg1.style.width = '300px';
+    generateImg1.style.height = '350px';
+    generateImg1.style.position = 'absolute';
+    module.append(generateImg1);
+    const generateImg2 = document.createElement('img');
+    generateImg2.src = 'media/STEP_5/CABLE/'+array_data_resume.get(array_data_control.get('module_selected')).get('KEY')+'/other/Connector.png';
+    generateImg2.style.width = '300px';
+    generateImg2.style.height = '350px';
+    generateImg2.style.position = 'absolute';
+    module.append(generateImg2);
+
+}
+function SwitchMenu(module, first = true,keyModule = 0) {
+    module.innerHTML = '';
+    const app_menu = document.createElement('div');
+    app_menu.style.width = '240px';
+    app_menu.style.height = '700px';
+    app_menu.style.overflowY = 'scroll';
+    app_menu.style.overflowX = 'hidden';
+    app_menu.style.float='left';
+    app_menu.setAttribute('id','menu_id');
+    let countModule = 0;
+    array_data_resume.forEach((value, key) => {
+        const menu_tab = document.createElement("button");
+        menu_tab.innerText = (key+1) +' - '+value.get("DESCRIPTION");
+        menu_tab.style.clear = 'both';
+        menu_tab.style.display='block';
+        menu_tab.style.width = '200px';
+        menu_tab.style.height = '30px';
+        menu_tab.style.cursor = 'pointer';
+        menu_tab.style.float='left';
+        if(first == true){
+            if(countModule == 0){
+                menu_tab.setAttribute('class', 'active_button button_item');
+            }else{
+                menu_tab.setAttribute('class', 'button_item');
+            }
+        }
+        menu_tab.setAttribute('onclick',"SwitchMenuRender("+countModule+")")
+        app_menu.append(menu_tab);
+        countModule++;
+
+    });
+    if(first == true){
+        keyModule = 0;
+    }
+    module.append(app_menu);
+    if(first == false){
+        for (let i = 0; i < document.getElementsByClassName('modules').length; i++) {
+            document.getElementsByClassName('modules')[i].innerHTML = '';
+            document.getElementsByClassName('modules')[i].style.display = 'none';
+        }
+        document.getElementsByClassName('modules')[keyModule].style.display = 'block';
+        document.getElementsByClassName('button_item')[keyModule].setAttribute('class', 'active_button');
+        array_data_control.set('module_selected',keyModule);
+
+
+    }else{
+
+        for (let i = 0; i < array_data_resume.size; i++) {
+            let array_color = new Array();
+            for (let j = 0; j < config_order_element.get(array_data_resume.get(i).get('KEY')).get('NBR_CABLES'); j++) {
+                array_color.push("Bleu");
+            }
+            array_result_color_for_order.set(i,array_color); // COULEUR DES MODULES
+        }
+
+
+    }
+
+
+
+
+}
+function SwitchMenuRender(keyModules){
+    for (let i = 0; i<document.getElementsByClassName('button_item').length;i++){
+        document.getElementsByClassName('button_item')[i].setAttribute('class', 'button_item');
+    }
+    document.getElementsByClassName('button_item')[keyModules].setAttribute('class', 'active_button button_item');
+    RenderModuleIntoRender(keyModules);
+}
+function RenderModuleIntoRender(keyModules){
+    const moduleApp = document.getElementById('moduleApp');
+    const module = document.getElementById('modules');
+    module.innerHTML = '';
+    array_data_resume.forEach((value, key) => {
+        if(key == keyModules){
+            module.style.display = 'block';
+        }else {
+            module.style.display = 'none';
+        }
+
+
+
+        ShowModule(module,false,keyModules);
+
+
+        moduleApp.append(module);
+    });
 }

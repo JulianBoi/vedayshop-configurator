@@ -1,8 +1,9 @@
 
 function AddStep() {
+    const main = document.getElementsByTagName('main')[0];
     const render = document.createElement('div');
     render.setAttribute('id','render');
-    document.body.prepend(render);
+    document.getElementById('module-main').append(render);
 }
 function DeleteStep() {
     Reset();
