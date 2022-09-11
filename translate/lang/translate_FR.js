@@ -32,5 +32,9 @@ array_translate_FR.set('notOrder','Pas de commande pour le moment.');
 array_translate_FR.set('description','Description');
 array_translate_FR.set('priceUnit','Prix à l\'unité');
 array_translate_FR.set('modifAndSupp','action');
+array_translate_FR.set('blue','Bleu');
+array_translate_FR.set('brown','Marron');
+array_translate_FR.set('black','Noir');
+array_translate_FR.set('red_dark','Rouge Sombre');
 
 
